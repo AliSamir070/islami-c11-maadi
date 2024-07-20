@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:islamy_c11_maadi/model/hadeth_model.dart';
 
+import 'hadeth_item.dart';
+
 class HadethTab extends StatefulWidget {
   HadethTab({super.key});
 
@@ -49,7 +51,7 @@ class _HadethTabState extends State<HadethTab> {
           child: ahadethList.isEmpty
               ?Center(child: CircularProgressIndicator(),)
               :ListView.separated(
-              itemBuilder: (context, index) => Text(ahadethList[index].title),
+              itemBuilder: (context, index) => HadethItem(hadeth: ahadethList[index],),
               separatorBuilder:(context,index)=>Divider() ,
               itemCount: ahadethList.length
           ),
