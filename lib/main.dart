@@ -3,7 +3,10 @@ import 'package:islamy_c11_maadi/ui/home/home_screen.dart';
 import 'package:islamy_c11_maadi/ui/suracontent/sura_content_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  // new change
+
+
+  runApp(const MyApp()  );
 }
 
 class MyApp extends StatelessWidget {
