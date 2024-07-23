@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_c11_maadi/model/hadeth_model.dart';
 
+import '../style/AppStyle.dart';
+
 class HadethContentScreen extends StatelessWidget {
   static const String routname = "HadethContentScreen";
   const HadethContentScreen({super.key});
@@ -11,7 +13,9 @@ class HadethContentScreen extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/background.png"),
+                image: AssetImage(AppStyle.isDark
+                    ?"assets/images/dark_background.png"
+                    :"assets/images/background.png"),
                 fit: BoxFit.fill
             )
         ),
@@ -31,10 +35,7 @@ class HadethContentScreen extends StatelessWidget {
                         args.content,
                         textAlign: TextAlign.center,
                         textDirection: TextDirection.rtl,
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: "DecoType Thuluth"
-                        ),
+                        style: Theme.of(context).textTheme.bodySmall,
                     )),
                   ),
                 ),

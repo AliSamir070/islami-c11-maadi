@@ -9,10 +9,7 @@ class SuraContentItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "$verse (${index+1})",
-      style: TextStyle(
-        fontSize: 20,
-        fontFamily: "DecoType Thuluth"
-      ),
+      style: Theme.of(context).textTheme.bodySmall,
 
       textAlign: TextAlign.center,textDirection: TextDirection.rtl,);
   }

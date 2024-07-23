@@ -18,18 +18,12 @@ class QuranSuraWidget extends StatelessWidget {
       child: IntrinsicHeight(
         child: Row(
           children: [
-            Expanded(child: Text(suraName,textAlign: TextAlign.center,style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25
-            ),),),
+            Expanded(child: Text(suraName,textAlign: TextAlign.center,style: Theme.of(context).textTheme.displayMedium,),),
             Container(
               width: 5,
-              color: Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).colorScheme.onPrimaryContainer,
             ),
-            Expanded(child: Text(verseNumber.toString(),textAlign: TextAlign.center,style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25
-            )))
+            Expanded(child: Text(verseNumber.toString(),textAlign: TextAlign.center,style: Theme.of(context).textTheme.displayMedium))
           ],
         ),
       ),
