@@ -36,7 +36,7 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
                 :Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListView.separated(
-                  itemBuilder: (context , index)=>SuraContentItem(verses[index],index),
+                  itemBuilder: (context , index)=>SuraContentItem(verses[index].trim(),index),
                   separatorBuilder: (context,index)=>Divider(),
                   itemCount: verses.length),
                 ),

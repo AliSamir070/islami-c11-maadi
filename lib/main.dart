@@ -20,17 +20,23 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textTheme: TextTheme(
+          bodyMedium: TextStyle(
+            fontSize: 25,
+            fontFamily: 'El Messiri',
+          ),
+        ),
         scaffoldBackgroundColor: Colors.transparent,
-        dividerColor: Color(0xffB7935F),
-        cardTheme: CardTheme(
+        dividerColor: const Color(0xffB7935F),
+        cardTheme: const CardTheme(
           color: Colors.white,
           surfaceTintColor: Colors.white,
         ),
-        dividerTheme: DividerThemeData(
+        dividerTheme: const DividerThemeData(
           thickness: 3,
           color:Color(0xffB7935F)
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: Colors.black,
           unselectedItemColor:Colors.white,
           selectedIconTheme: IconThemeData(
@@ -40,20 +46,21 @@ class MyApp extends StatelessWidget {
             size: 40
           )
         ),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           centerTitle: true,
           titleTextStyle: TextStyle(
               fontSize: 30,
+                fontFamily: 'El Messiri',
               fontWeight: FontWeight.bold,
-              color: Color(0xff242424)
+              color: Color(0xff242424),
           )
         ),
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Color(0xffB7935F),
-            primary: Color(0xffB7935F),
+            seedColor: const Color(0xffB7935F),
+            primary: const Color(0xffB7935F),
             onPrimary: Colors.white,
-            secondary: Color(0xffB7935F).withOpacity(0.57),
+            secondary: const Color(0xffB7935F).withOpacity(0.57),
             onSecondary: Colors.black,
         ),
         useMaterial3: true,
