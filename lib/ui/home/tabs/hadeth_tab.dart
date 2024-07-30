@@ -44,6 +44,7 @@ class _HadethTabState extends State<HadethTab> {
             style: Theme.of(context).textTheme.displayMedium?.copyWith(
               fontWeight: FontWeight.w400,)
         ),
+        ),
         Expanded(
           flex: 2,
           child: ahadethList.isEmpty
