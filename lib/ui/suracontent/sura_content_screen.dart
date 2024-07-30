@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamy_c11_maadi/ui/SettingsProvider.dart';
 import 'package:islamy_c11_maadi/ui/suracontent/sura_content_item.dart';
+import 'package:provider/provider.dart';
 
 import '../../style/AppStyle.dart';
 
@@ -15,6 +17,7 @@ class SuraContentScreen extends StatefulWidget {
 class _SuraContentScreenState extends State<SuraContentScreen> {
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     SuraContentArgs args = ModalRoute.of(context)?.settings.arguments as SuraContentArgs;
     if(verses.isEmpty){
       loadFile(args.index);
@@ -22,9 +25,7 @@ class _SuraContentScreenState extends State<SuraContentScreen> {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(AppStyle.isDark
-                    ?"assets/images/dark_background.png"
-                    :"assets/images/background.png"),
+                image: AssetImage(provider.ChooseBackground()),
                 fit: BoxFit.fill
             )
         ),

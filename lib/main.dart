@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_c11_maadi/style/AppStyle.dart';
+import 'package:islamy_c11_maadi/ui/SettingsProvider.dart';
 import 'package:islamy_c11_maadi/ui/hadeth_content.dart';
 import 'package:islamy_c11_maadi/ui/home/home_screen.dart';
 import 'package:islamy_c11_maadi/ui/suracontent/sura_content_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 void main() {
   // new change
 
 
-  runApp(const MyApp()  );
+  runApp(ChangeNotifierProvider(
+      create: (context)=>SettingsProvider(),
+      child: const MyApp())  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,11 +22,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       darkTheme: AppStyle.darkTheme,
-      themeMode: AppStyle.isDark? ThemeMode.dark: ThemeMode.light,
+      themeMode: settingsProvider.themeMode,
       theme: AppStyle.lightTheme,
       localizationsDelegates: [
         AppLocalizations.delegate,
@@ -34,7 +39,7 @@ class MyApp extends StatelessWidget {
         Locale("en"),
         Locale("ar")
       ],
-      locale: Locale("en"),
+      locale: Locale(settingsProvider.selectedLanguage),
       routes: {
         HomeScreen.routename:(_)=>HomeScreen(),
         SuraContentScreen.routeName:(_)=>SuraContentScreen(),
