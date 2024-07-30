@@ -14,10 +14,7 @@ class HadethItem extends StatelessWidget {
       },
       child: Text(hadeth.title,
       textAlign: TextAlign.center,
-      style: TextStyle(
-        fontSize: 25,
-        fontWeight: FontWeight.bold
-      ),
+      style: Theme.of(context).textTheme.displayMedium,
       ),
     );
   }

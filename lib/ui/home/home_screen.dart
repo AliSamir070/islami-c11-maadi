@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_c11_maadi/style/AppStyle.dart';
 import 'package:islamy_c11_maadi/ui/home/tabs/hadeth_tab.dart';
 import 'package:islamy_c11_maadi/ui/home/tabs/quran_tab.dart';
 import 'package:islamy_c11_maadi/ui/home/tabs/radio_tab.dart';
 import 'package:islamy_c11_maadi/ui/home/tabs/sebha_tab.dart';
+import 'package:islamy_c11_maadi/ui/home/tabs/settings_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,14 +21,17 @@ class _HomeScreenState extends State<HomeScreen> {
     QuranTab(),
     HadethTab(),
     SebhaTab(),
-    RadioTab()
+    RadioTab(),
+    SettingsTab()
   ];
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/images/background.png"),
+            image: AssetImage(AppStyle.isDark
+                ?"assets/images/dark_background.png"
+                :"assets/images/background.png"),
             fit: BoxFit.fill
         )
       ),
@@ -69,6 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 AssetImage("assets/images/radio_icon.png"),
               ),
                 label: AppLocalizations.of(context)!.radio
+              ),
+              BottomNavigationBarItem(
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  icon: Icon(
+                    Icons.settings
+                  ),
+                  label: "Settings"
               ),
             ]
         ),

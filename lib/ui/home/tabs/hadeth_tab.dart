@@ -30,21 +30,20 @@ class _HadethTabState extends State<HadethTab> {
           decoration: BoxDecoration(
             border: Border(
               top: BorderSide(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.onPrimaryContainer,
                 width: 2
               ),
               bottom: BorderSide(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
                   width: 2
               )
             )
           ),
           child: Text(
-            AppLocalizations.of(context)!.ahadeth,
-            style: TextStyle(
-              fontSize: 25
-            ),
-          ),
+          AppLocalizations.of(context)!.ahadeth,
+            style: Theme.of(context).textTheme.displayMedium?.copyWith(
+              fontWeight: FontWeight.w400,)
+        ),
         ),
         Expanded(
           flex: 2,
