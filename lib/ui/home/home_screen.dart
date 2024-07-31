@@ -6,7 +6,7 @@ import 'package:islamy_c11_maadi/ui/home/tabs/sebha_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routename = "Home";
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
             image: AssetImage("assets/images/background.png"),
             fit: BoxFit.fill
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Islamy"),
+          title: const Text("Islamy"),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedIndex,
@@ -43,28 +43,28 @@ class _HomeScreenState extends State<HomeScreen> {
             items: [
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                 AssetImage("assets/images/quran_icon.png"),
               ),
-                label: "Quaran"
+                label: "Quran"
               ),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                 AssetImage("assets/images/hadeth_icon.png"),
               ),
-                label: "Hadeth"
+                label: "Hadith"
               ),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                 AssetImage("assets/images/sebha_icon.png"),
               ),
                 label: "Sebha"
               ),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                 AssetImage("assets/images/radio_icon.png"),
               ),
                 label: "Radio"

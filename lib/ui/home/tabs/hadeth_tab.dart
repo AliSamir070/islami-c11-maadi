@@ -37,7 +37,7 @@ class _HadethTabState extends State<HadethTab> {
               )
             )
           ),
-          child: Text(
+          child: const Text(
             "Ahadeth",
             style: TextStyle(
               fontSize: 25
@@ -47,10 +47,10 @@ class _HadethTabState extends State<HadethTab> {
         Expanded(
           flex: 2,
           child: ahadethList.isEmpty
-              ?Center(child: CircularProgressIndicator(),)
+              ?const Center(child: CircularProgressIndicator(),)
               :ListView.separated(
               itemBuilder: (context, index) => Text(ahadethList[index].title),
-              separatorBuilder:(context,index)=>Divider() ,
+              separatorBuilder:(context,index)=>const Divider() ,
               itemCount: ahadethList.length
           ),
         )
@@ -66,7 +66,6 @@ class _HadethTabState extends State<HadethTab> {
     for(int i=0;i<ahadeth.length;i++){
       List<String> oneHadethContent = ahadeth[i].trim().split("\n");
       String hadethTitle = oneHadethContent[0];
-      print(oneHadethContent);
       oneHadethContent.removeAt(0);
       String hadethContent = oneHadethContent.join("\n");
       ahadethList.add(HadethModel(title: hadethTitle, content: hadethContent));
