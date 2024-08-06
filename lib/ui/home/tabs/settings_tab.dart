@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:islamy_c11_maadi/ui/SettingsProvider.dart';
 import 'package:islamy_c11_maadi/ui/home/tabs/language_sheet.dart';
 import 'package:islamy_c11_maadi/ui/home/tabs/mode_sheet.dart';
+import 'package:provider/provider.dart';
 
 class SettingsTab extends StatefulWidget {
   const SettingsTab({super.key});
@@ -13,6 +15,7 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
+    SettingsProvider provider = Provider.of<SettingsProvider>(context);
     return Container(
       margin: EdgeInsets.all(38),
       child: Column(
@@ -40,7 +43,7 @@ class _SettingsTabState extends State<SettingsTab> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("English",style: TextStyle(
+                    Text(provider.selectedLanguage=="en"?"English":"العربية",style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Theme.of(context).colorScheme.primary
                     ),),
@@ -74,7 +77,9 @@ class _SettingsTabState extends State<SettingsTab> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Light",style: TextStyle(
+                    Text(provider.themeMode == ThemeMode.light
+                        ?"Light"
+                        :"Dark",style: TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Theme.of(context).colorScheme.primary
                     ),),
