@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:islamy_c11_maadi/ui/home/home_screen.dart';
 import 'package:islamy_c11_maadi/ui/suracontent/sura_content_screen.dart';
 
@@ -21,25 +21,25 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.transparent,
         dividerColor: Color(0xffB7935F),
-        cardTheme: CardTheme(
+        cardTheme:const CardTheme(
           color: Colors.white,
           surfaceTintColor: Colors.white,
         ),
-        dividerTheme: DividerThemeData(
+        dividerTheme: const DividerThemeData(
           thickness: 3,
           color:Color(0xffB7935F)
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: Colors.black,
           unselectedItemColor:Colors.white,
           selectedIconTheme: IconThemeData(
             size: 40
           ),
-          unselectedIconTheme: IconThemeData(
+          unselectedIconTheme:IconThemeData(
             size: 40
           )
         ),
-        appBarTheme: AppBarTheme(
+        appBarTheme:const  AppBarTheme(
           backgroundColor: Colors.transparent,
           centerTitle: true,
           titleTextStyle: TextStyle(
